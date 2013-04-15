@@ -3,7 +3,11 @@ shogun-gsoc
 
 Shogun demos for GSoC.
 
-Makefile launches debug server.
+Currently implemented: SVM Binary Classification with Gaussian Kernel.
 
-SVM Binary Classification with Gaussian Kernel.
+Testing
+-------
+
+- Makefile launches debug server.
+- Visit localhost:8000/cgi-bin/svm.py
 

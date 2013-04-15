@@ -76,7 +76,7 @@ def get_features(message):
 
 
 def render_html(args):
-    with open("cgi-bin/demo.html", "r") as f:
+    with open("demo.html", "r") as f:
         web = f.read()
     return web
 
