@@ -3,11 +3,16 @@ shogun-gsoc
 
 Shogun demos for GSoC.
 
-Currently implemented: SVM Binary Classification with Gaussian Kernel.
+Currently implemented:
+- SVM Binary Classification.
+- GMNPSVM MultiClassification.
+
+Kernels:
+- Gaussian Kernel.
 
 Testing
 -------
 
 - Makefile launches debug server.
-- Visit localhost:8000 and enjoy.
+- Visit http://localhost:8000 and enjoy.
 
