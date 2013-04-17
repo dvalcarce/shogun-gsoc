@@ -36,7 +36,7 @@ function change_features(feature) {
 		.classed("btn-primary", 1);
 }
 
-function classify() {
+function classify(action) {
 	var points = {};
 
 	svg.selectAll("circle")
@@ -50,7 +50,7 @@ function classify() {
 			}
 		});
 
-	data = { "action": "binary", "data": {"points": points, "C": 5 }};
+	data = { "action": action, "data": {"points": points, "C": 5 }};
 
 	request_clasify(data);
 }
@@ -94,7 +94,7 @@ function recv(data) {
 		zs = d3.range(data["min"], data["max"], 0.1),
 		x = d3.scale.linear().range([0, width]).domain([0, z.length]),
 		y = d3.scale.linear().range([0, height]).domain([0, z[0].length]),
-		colours = d3.scale.linear().domain([-1, 1]).range(["blue", "red"]);
+		colours = d3.scale.linear().domain(data["domain"]).range(["blue", "red"]);
 
 	c.contour(z, 0, xs.length-1, 0, ys.length-1, xs, ys, zs.length, zs);
 

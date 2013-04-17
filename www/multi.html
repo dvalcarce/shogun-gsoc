@@ -6,6 +6,7 @@
 
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../css/demo.css" rel="stylesheet">
 
     <style type="text/css">
       body {
@@ -55,11 +56,20 @@
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
-          <div class="hero-unit">
-            <h1>TODO</h1>
-            <h2>In progress.</h2>
-          </div>
-          </div><!--/row-->
+
+        <h1>Multiclass classification</h1>
+
+        <div class="svg-container"></div>
+
+        <div class="btn-group">
+          <button id="a_button" class="btn btn-primary" type="button" onclick="change_features('a')">A features</button>
+          <button id="b_button" class="btn" type="button" onclick="change_features('b')">B features</button>
+          <button id="c_button" class="btn" type="button" onclick="change_features('c')">C features</button>
+          <button id="d_button" class="btn" type="button" onclick="change_features('d')">D features</button>
+        </div>
+        <button class="btn btn-success" type="button" onclick="classify('multi')">Classify</button>
+        </p>
+
         </div><!--/span-->
       </div><!--/row-->
     <hr>
@@ -68,4 +78,9 @@
       </footer>
     </div><!--/.fluid-container-->
   </body>
+
+  <script type="text/javascript" src="../js/d3.v3.js"></script>
+  <script type="text/javascript" src="../js/conrec.js"></script>
+  <script type="text/javascript" src="../js/main.js"></script>
+
 </html>
