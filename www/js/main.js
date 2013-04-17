@@ -5,7 +5,7 @@ var width = 640,
 	height = 400;
 var fill = d3.scale.category10();
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("div.svg-container").append("svg")
 	.attr("width", width)
 	.attr("height", height)
 	.on("mousedown", mousedown);
@@ -23,7 +23,7 @@ function mousedown() {
 		.attr("class", feature_type)
 		.attr("opacity", 0)
 		.transition()
-		.duration(500)
+		.duration(200)
 		.ease("linear")
 		.attr("opacity", 1);
 }
@@ -31,11 +31,9 @@ function mousedown() {
 function change_features(feature) {
 	feature_type = feature;
 	d3.selectAll("button")
-		.classed("button_on", 0)
-		.classed("button", 1);
+		.classed("btn-primary", 0);
 	d3.select("#" + feature + "_button")
-		.classed("button", 0)
-		.classed("button_on", 1);
+		.classed("btn-primary", 1);
 }
 
 function classify() {
@@ -52,7 +50,9 @@ function classify() {
 			}
 		});
 
-	request_clasify(points);
+	data = { "action": "binary", "data": {"points": points, "C": 5 }};
+
+	request_clasify(data);
 }
 
 function request_clasify(data) {
@@ -72,6 +72,7 @@ function recv(data) {
 	data = JSON.parse(data);
 
 	if (data["status"] != "ok") {
+		alert(data["status"]);
 		return;
 	}
 
