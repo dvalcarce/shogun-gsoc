@@ -9,5 +9,5 @@ Testing
 -------
 
 - Makefile launches debug server.
-- Visit localhost:8000/cgi-bin/svm.py
+- Visit localhost:8000 and enjoy.
 
