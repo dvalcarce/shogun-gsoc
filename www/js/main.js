@@ -37,7 +37,7 @@ function change_features(feature) {
 }
 
 function classify(action) {
-	var points = {};
+	points = {};
 
 	svg.selectAll("circle")
 		.each(function(d, i) {
@@ -50,7 +50,11 @@ function classify(action) {
 			}
 		});
 
-	data = { "action": action, "data": {"points": points, "C": 5 }};
+	c = parseInt(d3.select("input#c-param").property("value"));
+	if (!c) {
+		c = 1;
+	}
+	data = { "action": action, "data": {"points": points, "C": c}};
 
 	request_clasify(data);
 }

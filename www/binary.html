@@ -60,14 +60,20 @@
         <h1>Binary classification</h1>
 
         <div class="svg-container"></div>
-
-        <div class="btn-group">
-          <button id="a_button" class="btn btn-primary" type="button" onclick="change_features('a')">A features</button>
-          <button id="b_button" class="btn" type="button" onclick="change_features('b')">B features</button>
-        </div>
-        <button class="btn btn-success" type="button" onclick="classify('binary')">Classify</button>
-        </p>
-
+          <p>
+            <div class="btn-group">
+              <button id="a_button" class="btn btn-primary" type="button" onclick="change_features('a')">A features</button>
+              <button id="b_button" class="btn" type="button" onclick="change_features('b')">B features</button>
+            </div>
+          </p>
+          <p>
+            <div class="btn-group">
+              <div class="input-append">
+                <input id="c-param" class="span5" type="text" placeholder="C parameter">
+                <button class="btn btn-success" type="button" onclick="classify('binary')">Classify</button>
+              </div>
+            </div>
+          </p>
         </div><!--/span-->
       </div><!--/row-->
     <hr>
